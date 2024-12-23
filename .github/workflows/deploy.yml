@@ -22,7 +22,7 @@ jobs:
 
     - name: Deploy to S3
       run: |
-        aws s3 sync . s3://ui-xgate-website-prd --delete \
+        aws s3 sync . s3://xgateglobal.com --delete \
           --exclude ".git/*" \
           --exclude ".github/*" \
           --exclude "README.md" \
@@ -30,4 +30,4 @@ jobs:
 
     - name: Invalidate CloudFront Cache
       run: |
-        aws cloudfront create-invalidation --distribution-id E18O0HDH1RDTR4 --paths "/*"
+        aws cloudfront create-invalidation --distribution-id E9MPC4SCCCACM --paths "/*"
